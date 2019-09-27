@@ -1,0 +1,329 @@
+@import "basics/_reset.scss";
+@import "basics/_structure.scss";
+@import "basics/_mixins.scss";
+@import "basics/_variables.scss";
+
+body {
+  font-family: "Lato", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  padding: 20px;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    width: 158px;
+    height: 76px;
+  }
+  &__search {
+    position: relative;
+    input {
+      width: 190px;
+      @media screen and (min-width: 480px) and (max-width: 780px) {
+        width: 140px;
+      }
+      height: 30px;
+      font-size: 14px !important;
+      color: #707070;
+      border: none;
+      padding-right: 20px;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+    .btn-search {
+      width: 50px;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      margin: 0;
+      height: 30px;
+      color: #707070;
+      font-size: 14px;
+      background: transparent;
+      position: relative;
+      border-left: 1px solid #707070;
+      border-radius: 0;
+    }
+  }
+}
+
+.sub-menu {
+  height: 60px;
+  background-color: $primary-color;
+  position: relative;
+  &__items {
+    display: flex;
+    @include transition;
+    @media screen and (min-width: 480px) and (max-width: 780px) {
+      display: none;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      background-color: $primary-color;
+      li:last-child {
+        margin-bottom: 30px;
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+      height: 60px;
+      font-size: 20px;
+      color: $secondary-color;
+      padding: 0px 20px;
+      text-decoration: none;
+      &:hover {
+        background-color: #d0d0d0;
+        color: white;
+      }
+    }
+  }
+  &__burger {
+    position: absolute;
+    display: none;
+    @media screen and (min-width: 480px) and (max-width: 780px) {
+      display: block;
+    }
+    @include elemCenter;
+    .wrap {
+      display: inline-block;
+      cursor: pointer;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 3px;
+      background-color: white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  @media screen and (min-width: 480px) and (max-width: 780px) {
+    position: relative;
+  }
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  a {
+    color: #707070;
+    &:hover {
+      background: transparent;
+      color: #707070;
+      opacity: 0.6;
+    }
+  }
+  .wrap {
+    display: flex;
+    justify-content: center;
+    flex-flow: nowrap;
+  }
+  .col-6 {
+    width: 50%;
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hero-slider {
+  @media screen and (min-width: 480px) and (max-width: 780px) {
+    display: none;
+  }
+  .carrousel {
+    &__item {
+      height: 450px;
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.buy {
+  margin-top: 80px;
+  &__product {
+    &__info {
+      padding: 10px 0px;
+      text-align: center;
+      h3,
+      span {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: $primary-color;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      span {
+        font-weight: normal;
+      }
+    }
+    .btn-buy {
+      margin-top: 15px;
+    }
+  }
+  .buy__product__img {
+    height: 304px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .buy-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media only screen and (max-width: 1024px) and (min-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+      article:nth-child(3),
+      article:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+}
+
+.banner {
+  @media only screen and (max-width: 1024px) and (min-width: 480px) {
+    display: none;
+  }
+  &__image {
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.btn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    width: 262px;
+    @media screen and (min-width: 480px) and (max-width: 780px) {
+      width: 170px;
+    }
+    text-align: center;
+    line-height: 45px;
+    color: #62321d;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    border: 3px solid #62321d;
+    text-decoration: none;
+    border-radius: 10px;
+    @include transition;
+    &:hover {
+      background-color: #62321d;
+      color: white;
+    }
+  }
+}
+.btn-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    width: 158px;
+    text-align: center;
+    line-height: 45px;
+    color: #62321d;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    border: 3px solid #62321d;
+    text-decoration: none;
+    border-radius: 10px;
+    @include transition;
+    &:hover {
+      background-color: #62321d;
+      color: white;
+    }
+  }
+}
+.footer {
+  margin-top: 80px;
+  background-color: #ffe7d1;
+  text-align: center;
+  height: 60px;
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+//arrows
+button.slick-next,
+.slick-prev {
+  background: none;
+  border: none;
+}
+
+.slick-next {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+}
+.slick-prev {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  z-index: 9;
+}
+
+.products {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  .wrap {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    div:nth-child(3) {
+      display: block;
+    }
+    @media screen and (min-width: 480px) and (max-width: 780px) {
+      grid-template-columns: repeat(2, 1fr);
+      div:nth-child(3) {
+        display: none;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &__item__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    color: $primary-color;
+    text-align: left;
+    margin-top: 10px;
+    padding: 0px 15px;
+    p {
+      @media screen and (min-width: 480px) and (max-width: 780px) {
+        font-size: 16px;
+      }
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .btn-more {
+      margin-top: 30px;
+    }
+  }
+}
