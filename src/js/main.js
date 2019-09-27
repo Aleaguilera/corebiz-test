@@ -21,6 +21,7 @@ function dropMenu() {
 
 const apiUrl =
   "https://corebiz.myvtex.com/api/catalog_system/pub/products/search/tablete";
+
 document.addEventListener("DOMContentLoaded", function(event) {
   getItem();
 });
@@ -38,9 +39,9 @@ function getItem() {
         let htmlitem = `
         <article class="buy__product">
           <div class="buy__product__img">
-            <figure>
-              <img src="${data[randomitem].imageUrl}" alt="">
-            </figure>
+            <div class="aspect-ratio-largest">
+                <img src="${data[randomitem].imageUrl}" alt="">
+            </div>
           </div>
           <div class="buy__product__info">
             <h3>${data[randomitem].productTitle}</h3>

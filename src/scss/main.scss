@@ -4,7 +4,7 @@
 @import "basics/_variables.scss";
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: $primary-font;
   height: 100%;
   width: 100%;
 }
@@ -175,12 +175,6 @@ body {
     .btn-buy {
       margin-top: 15px;
     }
-  }
-  .buy__product__img {
-    height: 304px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .buy-items {
     display: grid;
