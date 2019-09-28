@@ -36,7 +36,7 @@ body {
       font-size: 16px;
     }
     .btn-search {
-      width: 50px;
+      width: 53px;
       position: absolute;
       top: 0;
       right: 10px;
@@ -65,6 +65,7 @@ body {
       top: 60px;
       width: 100%;
       background-color: $primary-color;
+      z-index: 1;
       li:last-child {
         margin-bottom: 30px;
       }
@@ -157,6 +158,10 @@ body {
 .buy {
   margin-top: 80px;
   &__product {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0px;
+    }
     &__info {
       padding: 10px 0px;
       text-align: center;

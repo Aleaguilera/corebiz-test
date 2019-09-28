@@ -32,15 +32,16 @@ function getItem() {
       return response.json();
     })
     .then(function(data) {
+      let itemprub = data[6];
+      console.log(itemprub);
       let putArticles = document.getElementsByClassName("buy-items");
-      // let auxdata = data.slice(0,4)
       for (let item = 0; item < 4; item++) {
         let randomitem = parseInt(Math.random() * (data.length - 0) + 0);
         let htmlitem = `
         <article class="buy__product">
           <div class="buy__product__img">
             <div class="aspect-ratio-largest">
-                <img src="${data[randomitem].imageUrl}" alt="">
+              <img src="${data[randomitem].items[0].images[0].imageUrl}" alt="">
             </div>
           </div>
           <div class="buy__product__info">
